@@ -4,6 +4,8 @@
 # Replace OLD_EMAIL, CORRECT_NAME, CORRECT_EMAIL with desired fields and run in
 # a bare cloned repo
 # To clone a bare repo use cmd `git clone --bare` 
+# Once you run the script, you must push the corrected history to GitHub
+# Using `git push --force --tags origin 'refs/heads/*'`
 git filter-branch --env-filter '
 
 OLD_EMAIL=""
