@@ -55,14 +55,6 @@ EOF
   request_confirmation "Do you want to proceed?"
 }
 
-function git_version_lte() {
-  OP_VERSION=$(printf "%03d%03d%03d%03d" $(echo "$1" | tr '.' '\n' | head -n 4))
-  GIT_VERSION=$(git version)
-  GIT_VERSION=$(printf "%03d%03d%03d%03d" $(echo "${GIT_VERSION#git version}" | tr '.' '\n' | head -n 4))
-  echo -e "${GIT_VERSION}\n${OP_VERSION}" | sort | head -n1
-  [ ${OP_VERSION} -le ${GIT_VERSION} ]
-}
-
 function main() {
 
   warn
